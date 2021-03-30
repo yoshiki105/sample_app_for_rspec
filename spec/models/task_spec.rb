@@ -17,8 +17,8 @@ RSpec.describe Task, type: :model do
       expect(task.errors[:status]).to eq ["can't be blank"]
     end
     it 'is invalid with a duplicate title' do
-      task = create(:task, title: 'Sample title')
-      other_task = build(:task, title: 'Sample title')
+      task = create(:task)
+      other_task = build(:task, title: task.title)
       expect(other_task).to be_invalid
       expect(other_task.errors[:title]).to eq ['has already been taken']
     end
