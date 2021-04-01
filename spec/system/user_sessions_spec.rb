@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'UserSessions', type: :system do
-  let!(:user) { create(:user, password: 'password', password_confirmation: 'password') }
+  let(:user) { create(:user) }
 
   context 'ログイン前' do
     context 'フォームに正しい値を入力した時' do

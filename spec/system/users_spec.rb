@@ -52,7 +52,7 @@ RSpec.describe 'Users', type: :system do
   end
 
   context 'ログイン後' do
-    let!(:user) { create(:user) }
+    let(:user) { create(:user) }
     describe 'ユーザー情報の編集' do
       before(:each) do
         sign_in_as(user)
